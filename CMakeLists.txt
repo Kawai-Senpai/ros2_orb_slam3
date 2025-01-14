@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(ros2_orb_slam3)
 
 # Make sure to set this path before building the  
-# set(ENV{PYTHONPATH} "/opt/ros/humble/lib/python3.10/site-packages/") # Must be set to match your installation
+set(ENV{PYTHONPATH} "/opt/ros/jazzy/lib/python3.12/site-packages/") # Must be set to match your installation
 
 # Enforce use of C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -26,13 +26,15 @@ find_package(Eigen3 3.3.0 REQUIRED) # Matched with Sophus
 find_package(Pangolin REQUIRED)
 find_package(image_transport REQUIRED)
 
-
 # Header file locations [C++ node]
 include_directories(include) # Add .hpp, .h files from include/ros2_orb_slam3
+include_directories(${rclcpp_INCLUDE_DIRS})
 include_directories(${EIGEN3_INCLUDE_DIRS}) # Include headers for eigen3
 include_directories(${Pangolin_INCLUDE_DIRS}) # include headers for pangolin
 include_directories(${OpenCV_INCLUDE_DIRS}) # include headers for pangolin
-
+include_directories(/opt/ros/jazzy/include/cv_bridge/cv_bridge/)
+include_directories(${cv_bridge_INCLUDE_DIRS}) # include headers for cv_bridge
+include_directories(${image_transport_INCLUDE_DIRS})
 
 # ORB-SLAM3 includes [VSLAM library]
 include_directories(
@@ -140,7 +142,6 @@ target_link_libraries(orb_slam3_lib
   -lboost_serialization
   -lcrypto 
 )
-
 
 # Find the .so files provided in ros2_orb_slam3/orb_slam3/Thirdparty projects
 set(DBoW2_PATH "${PROJECT_SOURCE_DIR}/orb_slam3/Thirdparty/DBoW2/lib/libDBoW2.so")
