@@ -112,7 +112,7 @@ Run the builtin example to verify the package is working correctly
 In one terminal [cpp node]
 
 ```bash
-cd ~/ros2_ws/
+cd ~/ros2/oebslam3_ws/
 source ./install/setup.bash
 ros2 run ros2_orb_slam3 mono_node_cpp --ros-args -p node_name_arg:=mono_slam_cpp
 ```
@@ -120,13 +120,11 @@ ros2 run ros2_orb_slam3 mono_node_cpp --ros-args -p node_name_arg:=mono_slam_cpp
 In another terminal [python node]
 
 ```bash
-cd ~/ros2_ws
+cd ~/ros2/oebslam3_ws/
 source ./install/setup.bash
 ros2 run ros2_orb_slam3 mono_driver_node.py --ros-args -p settings_name:=EuRoC -p image_seq:=sample_euroc_MH05
 ```
 
 Both nodes would perform a handshake and the VSLAM framework would then work as shown in the following video clip
 
-
 https://github.com/Mechazo11/ros2_orb_slam3/assets/44814419/af9eaa79-da4b-4405-a4d7-e09242ab9660
-

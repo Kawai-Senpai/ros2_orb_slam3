@@ -67,7 +67,7 @@ source /opt/ros/jazzy/setup.bash
 mkdir -p ~/ros2/orbslam3_ws/src
 cd ~/ros2/orbslam3_ws/src
 
-# Retry cloning ORB-SLAM3 repository in case of network issues
+# Retry cloning ORB-SLAM3 repository in case of network issues from Kawai-Senpai's repository
 until git clone --depth 1 https://github.com/Kawai-Senpai/ros2_orb_slam3.git; do
     echo "Retrying clone of ORB-SLAM3 repository..."
     sleep 5
