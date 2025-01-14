@@ -1,6 +1,15 @@
 
 # ROS2 ORB SLAM3
 
+This package is modded to run on Ubuntu 24.04.1 LTS with ROS 2 Jazzy and OpenCV 4.6.0.
+
+```bash
+Dependencies:
+- Ubuntu 24.04.1 LTS
+- ROS 2 Jazzy
+- OpenCV 4.6.0
+```
+
 ## 1. Installation:
 
 ```bash
